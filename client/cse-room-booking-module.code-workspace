@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "cse-room-booking-module",
+			"path": ".."
+		},
+		{
+			"name": "dist",
+			"path": "../../IITHRoomBooking/room_booking_module/dist"
+		}
+	],
+	"settings": {}
+}

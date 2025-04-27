@@ -1,0 +1,41 @@
+A web-based Room Booking System specifically designed for IITH users, enabling efficient management and booking of institutional spaces.
+
+Core Features:
+- Authentication system restricted to @iith.ac.in email addresses
+- Room search and filtering by date, time, capacity, and type (
+- Real-time availability status of all rooms.
+- Clearly marked as "Available" or "Booked.")
+- Search & Filters: Filter rooms by date, time, capacity, and room type, Dynamic update of results as filters change.
+- Booking management with email confirmation
+- Room availability tracking with auto/manual release functionality
+Visual References:
+- Room list should be shown as clean cards or rows, with clear labels and status indicators.
+- Filters should be placed in a sidebar or top bar with dropdowns and date/time pickers.
+- Booking form should open in a modal or clean separate section, with validation hints.
+- Confirmation messages should be shown using toasts or banners.
+- Navigation should be minimal with clearly separated sections: "Book Room", "My Bookings", "History".
+- Responsive layout — should work well on laptop and tablets, basic support for mobile.
+
+Style Guide:
+- Colors: Primary #0A2342 (institutional blue), Secondary #2CA58D (teal), Accent #FFA630 (warning orange), Background #F5F7FA (light grey), Text #333333 (dark grey)
+- Design: Inter/IBM Plex Sans fonts, clean grid layout, calendar-based interface, responsive design with clear booking forms and status indicators
+- Typography
+  - Font: Inter or Roboto
+  - Heading: 20–24px, Body: 14–16px
+- Components
+  - Rounded buttons (8px radius)
+  - Hover states with slight shadow
+  - Material-style input fields with floating labels
+
+Note: As per requirements, this will be built using:
+- Frontend: React
+- Backend: Node.js/Express
+- Database: PostgreSQL (as other SQL databases are not available on Replit)
+- Authentication: Email-based (@iith.ac.in domain)
+
+Refer to the attached SRS and SRA documents for complete specifications. Only implement the Room Booking part.
+After the app is built, provide step-by-step instructions to:
+1. Run the app on localhost using WSL in VS Code on Windows, assuming nothing is installed except VS Code and WSL.
+2. Deploy the app (suggest a common platform like Render, Railway, or Vercel), including all necessary setup steps.
+
+Do not assume any prior configuration—include every step, from installing required packages to final deployment.
