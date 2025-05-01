@@ -89,7 +89,6 @@ export default function BookingModal({
     // Prepare booking data
     const bookingData: InsertBooking = {
       userId: user.id,
-      username: user.name,
       roomId: room.id,
       roomName: room.name,
       date,

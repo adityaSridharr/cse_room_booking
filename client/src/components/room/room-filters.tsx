@@ -7,20 +7,26 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Clock } from "lucide-react";
 import { RoomFilter } from "@shared/schema";
-
 interface RoomFiltersProps {
   onFilterChange: (filters: RoomFilter) => void;
 }
+// Function to format time strings
+
 
 export default function RoomFilters({ onFilterChange }: RoomFiltersProps) {
+  // Format hours and minutes into a time string HH:MM:00
+  const formatTimeString = (hours: number, minutes: number) => {
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:00`;
+  };
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split('T')[0];
-  
+  const currentHour = new Date().getHours();
+  const currentMinute = new Date().getMinutes();
   const [filters, setFilters] = useState<RoomFilter>({
     date: today,
-    startTime: '09:00:00',
-    endTime: '11:00:00',
-    capacity: 50,
+    startTime: formatTimeString(currentHour, currentMinute),
+    endTime: formatTimeString(currentHour + 1, currentMinute),
+    capacity: 10,
     type: 'all',
   });
 
@@ -38,10 +44,7 @@ export default function RoomFilters({ onFilterChange }: RoomFiltersProps) {
   const startTimeParsed = parseTimeString(filters.startTime!);
   const endTimeParsed = parseTimeString(filters.endTime!);
 
-  // Format hours and minutes into a time string HH:MM:00
-  const formatTimeString = (hours: number, minutes: number) => {
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:00`;
-  };
+  
 
   // Room type options
   const roomTypeOptions = [
@@ -172,7 +175,7 @@ export default function RoomFilters({ onFilterChange }: RoomFiltersProps) {
             <div className="flex items-center space-x-1">
               <Input 
                 type="number" 
-                min="0" 
+                min="00" 
                 max="23" 
                 value={startTimeParsed.hours}
                 onChange={handleStartHourChange}
@@ -181,7 +184,7 @@ export default function RoomFilters({ onFilterChange }: RoomFiltersProps) {
               <span className="text-muted-foreground">:</span>
               <Input 
                 type="number" 
-                min="0" 
+                min="00" 
                 max="59" 
                 value={startTimeParsed.minutes}
                 onChange={handleStartMinuteChange}
@@ -205,7 +208,7 @@ export default function RoomFilters({ onFilterChange }: RoomFiltersProps) {
             <div className="flex items-center space-x-1">
               <Input 
                 type="number" 
-                min="0" 
+                min="00" 
                 max="23" 
                 value={endTimeParsed.hours}
                 onChange={handleEndHourChange}
@@ -214,7 +217,7 @@ export default function RoomFilters({ onFilterChange }: RoomFiltersProps) {
               <span className="text-muted-foreground">:</span>
               <Input 
                 type="number" 
-                min="0" 
+                min="00" 
                 max="59" 
                 value={endTimeParsed.minutes}
                 onChange={handleEndMinuteChange}

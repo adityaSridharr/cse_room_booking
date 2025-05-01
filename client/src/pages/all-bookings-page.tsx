@@ -173,7 +173,7 @@ export default function AllBookingsPage() {
                         <div className="space-y-1">
                           <div className="flex items-center text-sm">
                             <User className="mr-1 h-4 w-4" />
-                            <span className="font-medium">Booked by: User {booking.username}</span>
+                            <span className="font-medium">Booked by: User {booking.userId}</span>
                           </div>
                           <div className="flex items-center text-sm text-muted-foreground">
                             <Building className="mr-1 h-4 w-4" />

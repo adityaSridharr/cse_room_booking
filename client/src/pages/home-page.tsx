@@ -63,7 +63,6 @@ export default function HomePage() {
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="name">Name</SelectItem>
                   <SelectItem value="capacity">Capacity</SelectItem>
                   <SelectItem value="type">Type</SelectItem>
                 </SelectContent>
