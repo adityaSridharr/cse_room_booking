@@ -85,7 +85,7 @@ export default function AllBookingsPage() {
                   </PopoverContent>
                 </Popover>
               </div>
-              
+
               {/* Room Type Filter */}
               <div>
                 <label className="text-sm font-medium mb-1 block">Room Type</label>
